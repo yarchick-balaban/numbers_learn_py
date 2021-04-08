@@ -117,3 +117,4 @@ if __name__ == "__main__":
     print('Медиана: ' + str(get_median_number))
     get_longest_seq = getMaxRow(get_int_with_list)
     print('Самая длинная возростающая последовательность: : ' + str(get_longest_seq))
+
