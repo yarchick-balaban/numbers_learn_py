@@ -128,7 +128,8 @@ def getLongMaxRow(long_max_row):
     elif len(result) == 0 and len(temp) == 0:
         print([long_max_row[0]])
     else:
-        print(result)
+        return result
+
 
 if __name__ == "__main__":
     generate_integer_list = GenerateInt()
@@ -141,8 +142,6 @@ if __name__ == "__main__":
     get_median_number = getMedian(get_int_with_list)
     print('Медиана: ' + str(get_median_number))
     get_longest_seq = getMaxRow(get_int_with_list)
-    print('Самая длинная возростающая последовательность: : ' + str(get_longest_seq))
-
-    f = getLongMaxRow(get_int_with_list)
-
-
+    print('Самая длинная возростающая последовательность: ' + str(get_longest_seq))
+    max_row_up = getLongMaxRow(get_int_with_list)
+    print('Самая длинная возростающая последовательность (Через промежуточные списки): : ' + str(max_row_up))
