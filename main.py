@@ -106,17 +106,17 @@ def getMaxRow(max_number_low):
     longest_seq = max(np.split(nums, np.where(np.diff(nums) != 1)[0]+1), key=len).tolist()
     return longest_seq
 
-def getLongMaxRow(long_max_row):
+def getLongMinRow(long_min_row):
 
     temp = []
     result = []
 
-    for i in range(len(long_max_row) - 1):
-        if long_max_row[i + 1] < long_max_row[i] and len(temp) == 0:
-            temp.append(long_max_row[i])
-            temp.append(long_max_row[i + 1])
-        elif long_max_row[i + 1] < long_max_row[i] and len(temp) != 0:
-            temp.append(long_max_row[i + 1])
+    for i in range(len(long_min_row) - 1):
+        if long_min_row[i + 1] < long_min_row[i] and len(temp) == 0:
+            temp.append(long_min_row[i])
+            temp.append(long_min_row[i + 1])
+        elif long_min_row[i + 1] < long_min_row[i] and len(temp) != 0:
+            temp.append(long_min_row[i + 1])
         else:
             if len(result) < len(temp):
                 result = temp
@@ -126,7 +126,7 @@ def getLongMaxRow(long_max_row):
     if len(result) < len(temp):
         print(temp)
     elif len(result) == 0 and len(temp) == 0:
-        print([long_max_row[0]])
+        print([long_min_row[0]])
     else:
         return result
 
@@ -143,5 +143,5 @@ if __name__ == "__main__":
     print('Медиана: ' + str(get_median_number))
     get_longest_seq = getMaxRow(get_int_with_list)
     print('Самая длинная возростающая последовательность: ' + str(get_longest_seq))
-    max_row_up = getLongMaxRow(get_int_with_list)
-    print('Самая длинная возростающая последовательность (Через промежуточные списки): : ' + str(max_row_up))
+    min_row_up = getLongMinRow(get_int_with_list)
+    print('Самая длинная убывающая последовательность (Через промежуточные списки): : ' + str(min_row_up))
